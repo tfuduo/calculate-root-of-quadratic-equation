@@ -1,5 +1,6 @@
 package com.github.hcsp.calculation;
 
+import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +13,9 @@ public class SolutionTest {
     }
 
     private void assertDoubleArrayEquals(double[] expected, double[] actual) {
-        assertEquals(expected.length, actual.length);
-        java.util.Arrays.sort(expected);
-        java.util.Arrays.sort(actual);
+        Assertions.assertEquals(expected.length, actual.length);
+        Arrays.sort(expected);
+        Arrays.sort(actual);
         for (int i = 0; i < expected.length; ++i) {
             Assertions.assertTrue(Math.abs(expected[i] - actual[i]) < 0.0001);
         }
