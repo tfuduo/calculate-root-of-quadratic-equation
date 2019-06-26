@@ -23,7 +23,6 @@ public class Solution {
         double root;
         if(t<0) return new double[]{};
         else if(t==0.0) {
-            root = sqrt(t);
             return new double[]{(0.0-b)/(2*a)};
         }else {
             root = sqrt(t);
