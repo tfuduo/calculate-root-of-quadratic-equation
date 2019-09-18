@@ -19,7 +19,10 @@ public class Solution {
         double x = (-b+Math.sqrt(b*b-4*a*c))/2*a;
         double y = (-b-Math.sqrt(b*b-4*a*c))/2*a;
         double m = Math.sqrt(b*b-4*a*c);
-        if(m < 0) return new double[]{};
-        return m == 0 ? new double[]{x}:new double[]{x,y};
+        if (m<0){
+            return new double[]{};
+        }else if (m==0){
+            return new double[]{x};
+        }else return new double[]{x,y};
     }
 }
