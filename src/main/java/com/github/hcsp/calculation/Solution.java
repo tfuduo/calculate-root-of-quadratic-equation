@@ -18,7 +18,7 @@ public class Solution {
     public static double[] calculate(int a, int b, int c) {
         double x = (-b+Math.sqrt(b*b-4*a*c))/2*a;
         double y = (-b-Math.sqrt(b*b-4*a*c))/2*a;
-        double m = Math.sqrt(b*b-4*a*c);
+        int m = b*b-4*a*c;
         if (m<0){
             return new double[]{};
         }else if (m==0){
