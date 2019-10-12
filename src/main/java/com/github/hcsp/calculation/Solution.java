@@ -22,6 +22,7 @@ public class Solution {
     } else {
       double r1 = (-b + Math.sqrt(i)) * 1 / (2 * a);
       double r2 = (-b - Math.sqrt(i)) * 1 / (2 * a);
+      // 判断有没有值  double.isNan
       if ((r1 > 0 && r2 > 0) || (r1 < 0 && r2 < 0))
         if (Math.abs(r1) - Math.abs(r2) < 1e-5) {
           return new double[]{r1};
