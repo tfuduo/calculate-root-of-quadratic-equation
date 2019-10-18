@@ -20,6 +20,12 @@ public class Solution {
         double root1 = 1.0*(-b+ sqrt) / 2*a;
         double root2 = 1.0*(-b- sqrt) / 2*a;
         double res[];
+
+        if (Double.isNaN(root1)){
+            res = new double[] {};
+            return res;
+        }
+
         if (Math.abs(root1 - root2) < 0.00001){
             res= new double[] {root1};
         } else {
