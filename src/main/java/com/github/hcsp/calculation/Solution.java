@@ -1,6 +1,8 @@
 package com.github.hcsp.calculation;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Solution {
     public static void main(String[] args) {
@@ -15,5 +17,15 @@ public class Solution {
     // 若没有根，返回一个空数组，即：new double[] {}
     // 提示，你可利用求根公式x=[-b±√(b²-4ac)]/2a
     // 需要执行开方运算时可使用Math.sqrt()方法
-    public static double[] calculate(int a, int b, int c) {}
+    public static double[] calculate(int a, int b, int c) {
+        int tmp = b*b - 4*a*c;
+        double result1 = (-b + Math.sqrt(tmp))/ (2*a);
+        double result2 = (-b - Math.sqrt(tmp))/ (2*a);
+        if(tmp>0) {
+            return new double[]{result1,result2};
+        }else if(tmp == 0) {
+            return new double[]{result1};
+        }
+        return new double[0];
+    }
 }
