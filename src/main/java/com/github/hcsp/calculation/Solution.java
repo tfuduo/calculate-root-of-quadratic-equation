@@ -17,17 +17,16 @@ public class Solution {
     // 需要执行开方运算时可使用Math.sqrt()方法
     public static double[] calculate(int a, int b, int c) {
         double temp = Math.pow(b, 2) - 4 * a * c;
-        if(temp >= 0.0000001) {
+        if (temp - 0 >= -1e-6) {
             temp = Math.sqrt(temp);
-            double res1 = (-b + temp) / (2 * a);
-            double res2 = (-b - temp) / (2 * a);
+            double ret1 = (-b + temp) / (2 * a);
+            double ret2 = (-b - temp) / (2 * a);
 
-            if(Math.abs(res1 - res2) < 0.000001){
-                return new double[]{res1};
+            if (Math.abs(ret1 - ret2) < 1e-6) {
+                return new double[]{ret1};
             } else {
-                return new double[]{res1,res2};
+                return new double[]{ret1, ret2};
             }
-
         } else {
             return new double[]{};
         }
