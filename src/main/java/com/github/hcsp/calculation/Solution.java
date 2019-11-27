@@ -19,7 +19,7 @@ public class Solution {
         double number = Math.pow(b, 2) - (double) (4 * a * c);
 
         if (number > 0) {
-            return  new double[]{(Math.sqrt(number) + b) / 2 * a, Math.sqrt(number - b) / 2 * a};
+            return  new double[]{(-Math.sqrt(number) - b) / 2 * a, (Math.sqrt(number)-b )/ 2 * a};
         } else if(number ==0) {
             return  new double[]{-b / 2 * a};
         }else{
