@@ -1,6 +1,9 @@
 package com.github.hcsp.calculation;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Solution {
     public static void main(String[] args) {
@@ -15,5 +18,26 @@ public class Solution {
     // 若没有根，返回一个空数组，即：new double[] {}
     // 提示，你可利用求根公式x=[-b±√(b²-4ac)]/2a
     // 需要执行开方运算时可使用Math.sqrt()方法
-    public static double[] calculate(int a, int b, int c) {}
+    public static double[] calculate(int a, int b, int c) {
+        Double x1 = (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2 * a);
+        Double x2 = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2 * a);
+        Set<Double> doubleSet = new TreeSet<Double>();
+        if (!x1.equals(Double.NaN)) {
+            doubleSet.add(x1);
+        }
+
+        if (!x2.equals(Double.NaN)) {
+            doubleSet.add(x2);
+        }
+
+        Object[] tempArray = doubleSet.toArray();
+        double[] result = new double[tempArray.length];
+
+        for (int i = 0; i < tempArray.length; i++) {
+            double temp = (double) tempArray[i];
+            result[i] = temp;
+        }
+
+        return result;
+    }
 }
