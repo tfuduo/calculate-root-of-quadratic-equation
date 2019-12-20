@@ -17,18 +17,15 @@ public class Solution {
     // 需要执行开方运算时可使用Math.sqrt()方法
     public static double[] calculate(int a, int b, int c) {
         double sqrt = Math.sqrt(b * b - 4 * a * c);
+        double x1 = (-b + sqrt) / (2 * a);
+        double x2 = (-b - sqrt) / (2 * a);
         if (a == 0) {
             double x = (-c / b) * 1.0;
             return new double[]{x};
-        } else if (sqrt > 0) {
-            double x1 = (-b + sqrt) / (2 * a);
-            double x2 = (-b - sqrt) / (2 * a);
-            return new double[]{x1, x2};
-        } else if (sqrt == 0) {
-            return new double[]{ (-b + sqrt) / (2 * a)};
-        }
-        else {
+        } else if (Double.isNaN(x1)) {
             return new double[]{};
+        } else {
+            return x1 == x2 ? new double[]{x1} : new double[]{x1, x2};
         }
     }
 }
