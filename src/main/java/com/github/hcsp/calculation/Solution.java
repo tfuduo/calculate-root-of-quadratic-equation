@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Solution {
     public static void main(String[] args) {
-//        System.out.println("x^2-2x+1=0的解是：" + Arrays.toString(calculate(1, -2, 1)));
-//        System.out.println("x^2-4=0的解是：" + Arrays.toString(calculate(1, 0, -4)));
+        System.out.println("x^2-2x+1=0的解是：" + Arrays.toString(calculate(1, -2, 1)));
+        System.out.println("x^2-4=0的解是：" + Arrays.toString(calculate(1, 0, -4)));
         System.out.println("x^2+1=0的解是：" + Arrays.toString(calculate(1, 0, 1)));
     }
 
@@ -15,17 +15,5 @@ public class Solution {
     // 若没有根，返回一个空数组，即：new double[] {}
     // 提示，你可利用求根公式x=[-b±√(b²-4ac)]/2a
     // 需要执行开方运算时可使用Math.sqrt()方法
-    public static double[] calculate(int a, int b, int c) {
-        double delta = Math.pow(b, 2) - 4 * a * c;
-        double x1 = (b * (-1) + Math.sqrt(delta)) / (2 * a);
-        double x2 = (b * (-1) - Math.sqrt(delta)) / (2 * a);
-        if (delta > 0) {
-            return new double[]{x1, x2};
-        }
-        if (delta == 0) {
-            return new double[] {-1 * b / 2 / a};
-        }else{
-            return new double[] {};
-        }
-    }
+    public static double[] calculate(int a, int b, int c) {}
 }
