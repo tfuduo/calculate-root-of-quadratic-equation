@@ -21,9 +21,9 @@ public class Solution {
             return new double[]{};
         } else {
             double root1 = (-b + Math.sqrt(b方减4ac)) / (2 * a);
-            double root2 = (-b + Math.sqrt(b方减4ac)) / (2 * a);
+            double root2 = (-b - Math.sqrt(b方减4ac)) / (2 * a);
             if (b方减4ac == 0) {
-                return new double[1];
+                return new double[]{root1};
             } else {
                 return new double[]{root1, root2};
             }
