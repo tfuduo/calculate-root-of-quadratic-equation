@@ -17,8 +17,8 @@ public class Solution {
     // 需要执行开方运算时可使用Math.sqrt()方法
     public static double[] calculate(int a, int b, int c) {
         double discriminant = b * b - 4 * a * c; //b²-4ac 一元二次方程中的判别式
-        double v1 = (-b + Math.sqrt(discriminant)) / 2 * 1;//求根公式
-        double v2 = (-b - Math.sqrt(discriminant)) / 2 * 1;
+        double v1 = (-b + Math.sqrt(discriminant)) / 2 * a;//求根公式
+        double v2 = (-b - Math.sqrt(discriminant)) / 2 * a;
         if(discriminant < 0) return new double[]{};  //定理1  ax2+bx+c=0（a≠0）中，△＜0方程没有实数根。
         return discriminant == 0 ? new double[]{v1} : new double[]{v1, v2};//定理2  ax2+bx+c=0（a≠0）中，△＞0方程有两个不等实数根。定理3  ax2+bx+c=0（a≠0）中，△=0方程有两个相等实数根；
     }
