@@ -20,14 +20,11 @@ public class Solution {
         double v1 = (-b + Math.sqrt(m)) / 2 * a;
         double v2 = (-b - Math.sqrt(m)) / 2 * a;
         if (m >= 0)
-            if (v1 - v2 < 1e-6)
+            if (Math.abs(v1 - v2)< 1e-6)
                 return new double[]{v1};
             else
                 return new double[]{v1, v2};
-
         else
             return new double[]{};
-
-
     }
 }
