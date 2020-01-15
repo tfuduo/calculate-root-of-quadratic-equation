@@ -20,7 +20,7 @@ public class Solution {
         System.out.println("v"+ v);
         if (v < 0) {
             return new double[]{};
-        } else if (v - 0 < 0.0001) {
+        } else if (v - 0 < Double.MIN_EXPONENT) {
             double x = (double) (-1 * b) / (2 * a);
             return new double[]{x};
         } else {
