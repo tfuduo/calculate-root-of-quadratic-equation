@@ -15,5 +15,19 @@ public class Solution {
     // 若没有根，返回一个空数组，即：new double[] {}
     // 提示，你可利用求根公式x=[-b±√(b²-4ac)]/2a
     // 需要执行开方运算时可使用Math.sqrt()方法
-    public static double[] calculate(int a, int b, int c) {}
+    public static double[] calculate(int a, int b, int c) {
+        double d = b * b - 4 * a * c;
+        if (d > 0) {
+            double[] x = new double[2];
+            x[0] = (- b + Math.sqrt(d) ) / 2.0 * a;
+            x[1] = (- b - Math.sqrt(d) ) / 2.0 * a;
+            return x;
+        }
+        else if(d == 0) {
+            double[] x = new double[1];
+            x[0] = (-b) / 2.0 * a;
+            return x;
+        }
+         return new double[] {};
+    }
 }
