@@ -20,8 +20,8 @@ public class Solution {
         final double ta = b * b - 4 * a * c;
         if (ta > 0) {
             returnVal = new double[2];
-            returnVal[0] = -b + Math.sqrt(ta) / (2 * a);
-            returnVal[0] = -b - Math.sqrt(ta) / (2 * a);
+            returnVal[0] = (-b + Math.sqrt(ta)) / (2 * a);
+            returnVal[1] = (-b - Math.sqrt(ta)) / (2 * a);
         } else if (ta == 0) {
             returnVal = new double[1];
             returnVal[0] = -b / (2 * a);
