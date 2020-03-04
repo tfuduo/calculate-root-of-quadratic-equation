@@ -7,6 +7,8 @@ public class Solution {
         System.out.println("x^2-2x+1=0的解是：" + Arrays.toString(calculate(1, -2, 1)));
         System.out.println("x^2-4=0的解是：" + Arrays.toString(calculate(1, 0, -4)));
         System.out.println("x^2+1=0的解是：" + Arrays.toString(calculate(1, 0, 1)));
+
+        
     }
 
     // 计算一元二次方程ax^2+bx+c=0的根。
@@ -15,5 +17,21 @@ public class Solution {
     // 若没有根，返回一个空数组，即：new double[] {}
     // 提示，你可利用求根公式x=[-b±√(b²-4ac)]/2a
     // 需要执行开方运算时可使用Math.sqrt()方法
-    public static double[] calculate(int a, int b, int c) {}
+    public static double[] calculate(int a, int b, int c) {
+        double param = b * b - 4 * a * c;
+        if(param < 0) {
+            return new double[]{};
+        } else {
+            double r1 = (-b + Math.sqrt(param)) * 1 / (2 * a);
+            double r2 = (-b - Math.sqrt(param)) * 1 / (2 * a);
+            if ((r1 > 0 && r2 > 0) || (r1 < 0 && r2 < 0))
+                if (Math.abs(r1) - Math.abs(r2) < 0.0001) {
+                    return new double[] { r1 };
+                }
+            return new double[]{r1,r2};
+        }
+
+
+    }
+
 }
