@@ -1,5 +1,6 @@
 package com.github.hcsp.calculation;
 
+import javax.swing.*;
 import java.util.Arrays;
 
 public class Solution {
@@ -11,9 +12,26 @@ public class Solution {
 
     // 计算一元二次方程ax^2+bx+c=0的根。
     // 若有两个根，返回一个数组，包含这两个根，即：new double[] { root1, root2 }
-    // 若有一个根，返回一个数组，包含这个根，即：n返回new double[] { root }
+    // 若有一个根，返回一个数组，包含这个根，即：返回new double[] { root }
     // 若没有根，返回一个空数组，即：new double[] {}
     // 提示，你可利用求根公式x=[-b±√(b²-4ac)]/2a
     // 需要执行开方运算时可使用Math.sqrt()方法
-    public static double[] calculate(int a, int b, int c) {}
+    public static double[] calculate(int a, int b, int c) {
+
+        int sqrt = (b * b - 4 * a * c);
+
+        int i = (int) (-b + Math.sqrt(sqrt)) / (2 * a);
+        int j = (int) (-b - Math.sqrt(sqrt)) / (2 * a);
+
+        if (sqrt < 0) {
+            return new double[]{};
+        } else if (sqrt > 0) {
+            return new double[]{i, j};
+        } else {
+            return new double[]{i};
+        }
+    }
+
+
 }
+
