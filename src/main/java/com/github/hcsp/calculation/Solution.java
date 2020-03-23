@@ -15,5 +15,14 @@ public class Solution {
     // 若没有根，返回一个空数组，即：new double[] {}
     // 提示，你可利用求根公式x=[-b±√(b²-4ac)]/2a
     // 需要执行开方运算时可使用Math.sqrt()方法
-    public static double[] calculate(int a, int b, int c) {}
+    public static double[] calculate(int a, int b, int c) {
+         double sqrt = Math.sqrt(b*b-4*a*c);
+         double i1 = ( -b + sqrt ) / (2*a);
+         double i2 = ( -b - sqrt ) / (2*a);
+         if( sqrt < 0){//sqrt<0，方程没有实数根
+             return new double[]{};
+         }
+         return sqrt == 0 ? new double[]{ i1 } : new double[] { i1 , i2};
+            //sqrt = 0，有两个相同的实数根，sqrt > 0 ，有两个不等的实数根
+    }
 }
