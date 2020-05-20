@@ -17,7 +17,7 @@ public class Solution {
     // 需要执行开方运算时可使用Math.sqrt()方法
     public static double[] calculate(int a, int b, int c) {
         double root;
-        int criterion = (int) (Math.pow(b, 2) - 4 * a *c);
+        int criterion = (int) (Math.pow(b, 2) - 4 * a * c);
         if (criterion == 0) {
             return new double[] {(-b + Math.sqrt(criterion)) / 2};
         } else if (criterion > 0) {
